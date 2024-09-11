@@ -65,7 +65,7 @@ const deleteItem = async (req, res) => {
   if (!item) {
     throw new NotFoundError(`No Item matching id ${itemId}`);
   }
-  res.status(StatusCodes.OK).json(`Item ${itemId} deleted`);
+  res.status(StatusCodes.OK).json({ msg: `Item ${itemId} deleted` });
 };
 
 module.exports = {

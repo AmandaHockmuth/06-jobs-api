@@ -13,7 +13,7 @@ const ItemSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["unpaid", "pending", "paid"],
+      enum: ["unpaid", "pending", "paid", "declined"],
       default: "unpaid",
     },
     createdBy: {
