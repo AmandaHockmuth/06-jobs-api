@@ -27,6 +27,14 @@ const UserSchema = new mongoose.Schema({
       "Please provide a valid password between 6 and 25 characters in length.",
     ],
     minLength: 6,
+    maxLength: 25,
+  },
+  team: {
+    type: String,
+    required: [true, "Please provide a valid team identifier between 6 and 25 characters in length."],
+    minLength: 3,
+    maxLength: 25,
+    lowercase: true,
   },
 });
 

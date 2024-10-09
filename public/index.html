@@ -4,15 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Budget Item List</title>
+    <title>Team Budget and Agenda</title>
   </head>
 
   <body>
-    <h1>Budget Item List</h1>
+    <h1>Team Budget and Agenda</h1>
     <hr />
     <p id="message"></p>
     <hr />
     <div id="logon-register" style="display: none">
+      <h3>Welcome to Team Builder.</h3>
+      <p>
+        This application allows teams to share budget and agenda items in an
+        easily accessible central location. Please Logon or Register to access
+        your team data.
+      </p>
       <button type="button" id="logon">logon</button>
       <button type="button" id="register">register</button>
     </div>
@@ -31,7 +37,15 @@
       </form>
     </div>
     <div id="register-div" style="display: none">
+      <p>
+        Please be certain of your team key before registration, you cannot
+        change this later.
+      </p>
       <form>
+        <div>
+          <label for="team">team:</label>
+          <input type="text" id="team" />
+        </div>
         <div>
           <label for="name">name:</label>
           <input type="text" id="name" />
@@ -53,7 +67,7 @@
       </form>
     </div>
     <div id="items" style="display: none">
-      <p id="items"></p>
+      <h2 id="items">Budget Items:</h2>
       <table id="items-table">
         <tr id="items-table-header">
           <th>Title</th>
@@ -63,7 +77,25 @@
         </tr>
       </table>
       <button type="button" id="add-item">add budget item</button>
+      <h2 id="agendaitems">Agenda Items:</h2>
+      <table id="agenda-items-table">
+        <tr id="agenda-items-table-header">
+          <th>Title</th>
+          <th>Priority</th>
+          <th>Deadline</th>
+          <th>Status</th>
+          <!-- <th colspan="2"></th> -->
+        </tr>
+      </table>
+      <button type="button" id="add-agenda-item">add agenda item</button>
+      <p></p>
       <button type="button" id="logoff">log off</button>
+      <div id="delete-user-profile">
+        <p>
+          If you'd like to delete your user profile please contact our
+          <a href="mailto:admin@teambuilderv1.com">admin</a> team.
+        </p>
+      </div>
     </div>
     <div id="edit-item" style="display: none">
       <form>
@@ -86,6 +118,42 @@
         </div>
         <button type="button" id="adding-item">add</button>
         <button type="button" id="edit-cancel">cancel</button>
+      </form>
+    </div>
+    <div id="edit-agenda-item" style="display: none">
+      <form>
+        <div>
+          <label for="title">title:</label>
+          <input type="text" id="agenda-title" />
+        </div>
+        <div>
+          <label for="priority">priority:</label>
+          <select id="priority">
+            <option value="1">1 - Most Important</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 - Least Important</option>
+            <option value="0">0 - Optional</option>
+          </select>
+        </div>
+        <div>
+          <label for="deadline">deadline:</label>
+          <input type="text" id="deadline" placeholder="mm/dd/yyyy" />
+        </div>
+        <div>
+          <label for="status">status:</label>
+          <select id="agenda-status">
+            <option value="received">received</option>
+            <option value="accepted">accepted</option>
+            <option value="declined">declined</option>
+            <option value="pending">pending</option>
+            <option value="delayed">delayed</option>
+            <option value="completed">completed</option>
+          </select>
+        </div>
+        <button type="button" id="adding-agenda-item">add</button>
+        <button type="button" id="edit-agenda-cancel">cancel</button>
       </form>
     </div>
     <script src="./index.js" type="module"></script>
