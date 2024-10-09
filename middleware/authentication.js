@@ -13,7 +13,11 @@ const authenticationMiddleware = async (req, res, next) => {
   try {
     // @ts-ignore
     const payload = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = { userId: payload.userId, name: payload.name };
+    req.user = {
+      userId: payload.userId,
+      name: payload.name,
+      // team: payload.team,
+    };
     //console.log(req.user);
     next();
   } catch (error) {

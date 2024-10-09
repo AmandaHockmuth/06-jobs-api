@@ -9,7 +9,9 @@ export const handleLoginRegister = () => {
   const login = document.getElementById("logon");
   const register = document.getElementById("register");
 
+  // @ts-ignore
   loginRegisterDiv.addEventListener("click", (e) => {
+    // @ts-ignore
     if (inputEnabled && e.target.nodeName === "BUTTON") {
       if (e.target === login) {
         showLogin();

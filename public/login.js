@@ -1,7 +1,6 @@
 import {
   inputEnabled,
   setDiv,
-  token,
   message,
   enableInput,
   setToken,
@@ -20,7 +19,9 @@ export const handleLogin = () => {
   const logonButton = document.getElementById("logon-button");
   const logonCancel = document.getElementById("logon-cancel");
 
+  // @ts-ignore
   loginDiv.addEventListener("click", async (e) => {
+    // @ts-ignore
     if (inputEnabled && e.target.nodeName === "BUTTON") {
       if (e.target === logonButton) {
         enableInput(false);
@@ -39,7 +40,8 @@ export const handleLogin = () => {
 
           const data = await response.json();
           if (response.status === 200) {
-            message.textContent = `Logon successful.  Welcome ${data.user.name}`;
+            // @ts-ignore
+            message.textContent = `Logon successful.  Welcome ${data.user.name}, team ${data.user.team}.`;
             setToken(data.token);
 
             email.value = "";
@@ -47,10 +49,12 @@ export const handleLogin = () => {
 
             showItems();
           } else {
+            // @ts-ignore
             message.textContent = data.msg;
           }
         } catch (err) {
           console.error(err);
+          // @ts-ignore
           message.textContent = "A communications error occurred.";
         }
 

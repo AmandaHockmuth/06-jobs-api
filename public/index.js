@@ -31,15 +31,20 @@ import { showLoginRegister, handleLoginRegister } from "./loginRegister.js";
 import { handleLogin } from "./login.js";
 import { handleAddEdit } from "./addEdit.js";
 import { handleRegister } from "./register.js";
+import { handleAddEditAgenda } from "./addEditAgenda.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // @ts-ignore
   token = localStorage.getItem("token");
+  // @ts-ignore
   message = document.getElementById("message");
   handleLoginRegister();
   handleLogin();
   handleItems();
   handleRegister();
   handleAddEdit();
+  handleAddEditAgenda();
+
   if (token) {
     showItems();
   } else {

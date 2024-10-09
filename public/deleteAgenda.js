@@ -1,10 +1,10 @@
 import { enableInput, message, token } from "./index.js";
 import { showItems } from "./items.js";
 
-export const deleteItem = async (itemId) => {
+export const deleteAgendaItem = async (agendaItemId) => {
   enableInput(false);
 
-  const url = `/api/v1/items/${itemId}`;
+  const url = `/api/v1/agenda/${agendaItemId}`;
   try {
     const response = await fetch(url, {
       method: "DELETE",

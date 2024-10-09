@@ -1,3 +1,4 @@
+const { required } = require("joi");
 const mongoose = require("mongoose");
 
 const ItemSchema = new mongoose.Schema(
@@ -21,8 +22,14 @@ const ItemSchema = new mongoose.Schema(
       ref: "User",
       required: [true, "Please provide user."],
     },
+    team: {
+      type: String,
+      required: [true, "Please provide team."],
+    },
   },
   { timestamps: true }
 );
 
 module.exports = mongoose.model("Item", ItemSchema);
+
+// Add team attribute - pass in user's team
