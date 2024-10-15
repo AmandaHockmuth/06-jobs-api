@@ -16,6 +16,8 @@ const connectDB = require("./db/connect");
 // routers
 const authRouter = require("./routes/auth");
 const itemRouter = require("./routes/items");
+const agendaRouter = require("./routes/agenda");
+
 
 // error handler
 const notFoundMiddleware = require("./middleware/not-found");
@@ -39,6 +41,7 @@ app.use(xss());
 app.use(express.static("public"));
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/items", authUser, itemRouter);
+app.use("/api/v1/agenda", authUser, agendaRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

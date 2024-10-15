@@ -15,7 +15,9 @@ export const handleAddEdit = () => {
   addingItem = document.getElementById("adding-item");
   const editCancel = document.getElementById("edit-cancel");
 
+  // @ts-ignore
   addEditDiv.addEventListener("click", async (e) => {
+    // @ts-ignore
     if (inputEnabled && e.target.nodeName === "BUTTON") {
       if (e.target === addingItem) {
         enableInput(false);
@@ -46,9 +48,11 @@ export const handleAddEdit = () => {
           if (response.status === 200 || response.status === 201) {
             if (response.status === 200) {
               // a 200 is expected for a successful update
+              // @ts-ignore
               message.textContent = "The item entry was updated.";
             } else {
               // a 201 is expected for a successful create
+              // @ts-ignore
               message.textContent = "The item entry was created.";
             }
 
@@ -58,15 +62,18 @@ export const handleAddEdit = () => {
 
             showItems();
           } else {
+            // @ts-ignore
             message.textContent = data.msg;
           }
         } catch (err) {
           console.log(err);
+          // @ts-ignore
           message.textContent = "A communication error occurred.";
         }
 
         enableInput(true);
       } else if (e.target === editCancel) {
+        // @ts-ignore
         message.textContent = "";
         showItems();
       }
@@ -80,6 +87,7 @@ export const showAddEdit = async (itemId) => {
     value.value = "";
     status.value = "unpaid";
     addingItem.textContent = "add";
+    // @ts-ignore
     message.textContent = "";
 
     setDiv(addEditDiv);
@@ -101,17 +109,20 @@ export const showAddEdit = async (itemId) => {
         value.value = data.item.value;
         status.value = data.item.status;
         addingItem.textContent = "update";
+        // @ts-ignore
         message.textContent = "";
         addEditDiv.dataset.id = itemId;
 
         setDiv(addEditDiv);
       } else {
         // might happen if the list has been updated since last display
-        message.textContent = "The jobs entry was not found";
+        // @ts-ignore
+        message.textContent = "The item entry was not found";
         showItems();
       }
     } catch (err) {
       console.log(err);
+      // @ts-ignore
       message.textContent = "A communications error has occurred.";
       showItems();
     }
