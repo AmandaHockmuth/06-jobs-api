@@ -1,9 +1,10 @@
 :root {
   --primary-color: #4b4033;
   --secondary-color: #FF8C00;
-  --accent-color: #572e00;
+  --accent-color: #743e00;
   --light-color: #ffedda;
-  --transparent: rgba(240, 150, 107, 0);
+  --shadow: #743e0020;
+  --transparent: #ffedda00;
   --body-font: Roboto, sans-serif;
   --heading-font: Arial Black;
   --accent-font: Arial;
@@ -11,13 +12,14 @@
 }
 
 body {
-  background-image: url('./assets/TeamBackground.png');
+  background-image: url('./assets/Team\ Background.png');
   font-family: var(--body-font);
   line-height: 1.5;
   color: var(--primary-color);
 }
 
 h1 {
+  letter-spacing: -.1rem;
   font-size: 2.5rem;
   font-weight: bold;
   font-family: var(--heading-font);
@@ -27,14 +29,29 @@ h1 {
 }
 
 h2 {
+  letter-spacing: -.05rem;
   color: var(--accent-color);
   font-weight: bold;
   font-family: var(--heading-font);
   text-shadow: 1px 1px 2px var(--secondary-color);
 }
 
+form {
+  padding: .5rem;
+  border-radius: .5rem;
+  background: var(--shadow);
+}
+
+table {
+  padding: .5rem;
+  border-radius: .5rem;
+  background: var(--shadow);
+}
+
 p {
-  margin-bottom: 1rem;
+  padding: .5rem;
+  border-radius: .5rem;
+  background: var(--shadow);
 }
 
 a {
@@ -48,6 +65,7 @@ a:hover {
 }
 
 button {
+  font-size: 1rem;
   background-image: linear-gradient(to bottom, var(--secondary-color), var(--light-color));
   border: .13rem solid var(--primary-color);
   color: var(--primary-color);
@@ -62,4 +80,5 @@ background-image: linear-gradient(to top, var(--secondary-color), var(--light-co
 #message {
   background-image: linear-gradient(to right, var(--secondary-color), var(--transparent));
   font-family: var(--accent-font);
+  margin: -.3rem;
 }
