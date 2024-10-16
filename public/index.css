@@ -3,7 +3,7 @@
   --secondary-color: #FF8C00;
   --accent-color: #743e00;
   --light-color: #ffedda;
-  --shadow: #743e0020;
+  --backdrop: #ffedda99;
   --transparent: #ffedda00;
   --body-font: Roboto, sans-serif;
   --heading-font: Arial Black;
@@ -39,19 +39,19 @@ h2 {
 form {
   padding: .5rem;
   border-radius: .5rem;
-  background: var(--shadow);
+  background: var(--backdrop);
 }
 
 table {
   padding: .5rem;
   border-radius: .5rem;
-  background: var(--shadow);
+  background: var(--backdrop);
 }
 
 p {
   padding: .5rem;
   border-radius: .5rem;
-  background: var(--shadow);
+  background: var(--backdrop);
 }
 
 a {
